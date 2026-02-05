@@ -2,8 +2,9 @@ import { AlertTriangleIcon, Clock, Package2Icon, TrendingDownIcon } from 'lucide
 import StatCard from '../components/dashboard/StatCard'
 import AppLayout from '../components/layout/AppLayout'
 import Header from '../components/layout/Header'
-import { products } from '../lib/mock-data'
+import { alerts, products } from '../lib/mock-data'
 import type { Product } from '../types/inventory'
+import AlertList from '../components/dashboard/AlertList'
 
 const Index = () => {
 
@@ -40,6 +41,17 @@ const Index = () => {
                         icon={AlertTriangleIcon}
                         variant={expiredStocks > 0 ? "danger" : "default"}
                     />
+                </div>
+
+                <div className='grid gap-6 mt-5'>
+                    <div>
+                        <AlertList
+                            alerts={alerts}
+                            onAlertAcknowledged={undefined}
+                            limit={5}
+                            showViewAll
+                        />
+                    </div>
                 </div>
             </div>
         </AppLayout>

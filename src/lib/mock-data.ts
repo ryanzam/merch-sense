@@ -1,4 +1,4 @@
-import type { Product } from "../types/inventory";
+import type { InventoryAlert, Product } from "../types/inventory";
 
 export const products: Product[] = [
     {
@@ -142,3 +142,26 @@ export const products: Product[] = [
         updatedAt: new Date(),
     },
 ];
+
+export const alerts: InventoryAlert[] = [
+    {
+        id: "1",
+        productId: "1",
+        productName: "Organic Whole Milk",
+        type: 'expiring_soon',
+        message: "Organic whole milk expires in 4 days",
+        severity: 'warning',
+        createdAt: new Date(),
+        acknowledged: true
+    },
+    {
+        id: "2",
+        productId: "2",
+        productName: "Arabica Coffee Beans",
+        type: 'expiring_soon',
+        message: "Arabica Coffee Beans is low on stock (8 remaining)",
+        severity: 'warning',
+        createdAt: new Date(),
+        acknowledged: true
+    }
+]
