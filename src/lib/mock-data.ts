@@ -1,6 +1,6 @@
 import type { Product } from "../types/inventory";
 
-export const seedProducts: Product[] = [
+export const products: Product[] = [
     {
         id: '1',
         barcode: '5901234123457',
