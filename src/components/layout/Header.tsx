@@ -1,7 +1,6 @@
-import React from 'react'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
-import { Bell, Plus } from 'lucide-react'
+import { Bell, Plus, Search } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Badge } from '../ui/badge'
 
@@ -28,8 +27,8 @@ const Header = ({
             <div className="flex items-center gap-4">
                 {onSearch && (
                     <div className="relative">
-{/*                         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
- */}                        <Input
+                        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                        <Input
                             placeholder="Search products..."
                             className="w-64 bg-secondary/50 pl-9"
                             onChange={(e) => onSearch(e.target.value)}
