@@ -59,16 +59,16 @@ const AlertList = ({
                                 "flex items-start gap-4 rounded-lg border p-4 transition-all",
                                 alert.severity === 'critical'
                                     ? "border-destructive/30 bg-destructive/5"
-                                    : "border-warning/30 bg-warning/5"
+                                    : "border-yellow-300"
                             )}
                         >
                             <div className={cn(
                                 "rounded-lg p-2",
                                 alert.severity === 'critical'
                                     ? "bg-destructive/10 text-destructive"
-                                    : "bg-warning/10 text-warning"
+                                    : "border-yellow-300"
                             )}>
-                                <Icon className="h-5 w-5" />
+                                <Icon className="h-6 w-6" color={`${alert.type === "expired" ? "red" : "#a65f00"}`} />
                             </div>
                             <div className="flex-1 space-y-1">
                                 <div className="flex items-center gap-2">
