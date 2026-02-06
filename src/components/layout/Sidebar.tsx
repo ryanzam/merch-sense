@@ -1,5 +1,4 @@
 import { Bell, Box, Calendar, LayoutDashboard, Package, ScanBarcode, Settings, TrendingDown } from 'lucide-react';
-import React from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 

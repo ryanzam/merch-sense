@@ -166,6 +166,17 @@ export const alerts: InventoryAlert[] = [
     }
 ]
 
+export function searchProducts(query: string): Product[] {
+    const lowerQuery = query.toLowerCase();
+
+    return products.filter(p =>
+        p.name.toLowerCase().includes(lowerQuery) ||
+        p.barcode.includes(query) ||
+        p.category?.toLowerCase().includes(lowerQuery) ||
+        p.location?.toLowerCase().includes(lowerQuery)
+    );
+}
+
 export const categories = () => {
     const categories = new Set(products.map(p => p.category))
     return Array.from(categories).sort();
