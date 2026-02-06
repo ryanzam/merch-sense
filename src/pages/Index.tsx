@@ -1,10 +1,13 @@
-import { AlertTriangleIcon, Clock, Package2Icon, TrendingDownIcon } from 'lucide-react'
+import { AlertTriangleIcon, ArrowRight, Clock, Package2Icon, TrendingDownIcon } from 'lucide-react'
 import StatCard from '../components/dashboard/StatCard'
 import AppLayout from '../components/layout/AppLayout'
 import Header from '../components/layout/Header'
 import { alerts, products } from '../lib/mock-data'
 import type { Product } from '../types/inventory'
 import AlertList from '../components/dashboard/AlertList'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import { Link } from 'react-router-dom'
+import { Button } from '../components/ui/button'
 
 const Index = () => {
 
@@ -51,6 +54,34 @@ const Index = () => {
                             limit={5}
                             showViewAll
                         />
+                    </div>
+
+                    <div className="space-y-4">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle className="text-lg">Quick Actions</CardTitle>
+                            </CardHeader>
+                            <CardContent className="space-y-3">
+                                <Link to="/scan" className="block">
+                                    <Button variant="default" className="w-full justify-between">
+                                        Scan Barcode
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Button>
+                                </Link>
+                                <Link to="/inventory" className="block">
+                                    <Button variant="outline" className="w-full justify-between">
+                                        View All Inventory
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Button>
+                                </Link>
+                                <Link to="/inventory?filter=low-stock" className="block">
+                                    <Button variant="outline" className="w-full justify-between">
+                                        Restock Low Items
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Button>
+                                </Link>
+                            </CardContent>
+                        </Card>
                     </div>
                 </div>
             </div>
