@@ -3,17 +3,17 @@ import StatCard from '../components/dashboard/StatCard'
 import AppLayout from '../components/layout/AppLayout'
 import Header from '../components/layout/Header'
 import { alerts, products } from '../lib/mock-data'
-import type { Product } from '../types/inventory'
 import AlertList from '../components/dashboard/AlertList'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/ui/button'
+import { getExpiredStocks, getExpiringStocks, getLowStocks } from '../utils'
 
 const Index = () => {
 
-    const lowStocks = products.filter(p => p.quantity < p.lowStockThreshold).length
-    const expiringStocks = products.filter((p: Product) => p?.expiryDate && p.expiryDate > new Date()).length
-    const expiredStocks = products.filter((p: Product) => p?.expiryDate && p.expiryDate < new Date()).length
+    const lowStocks = getLowStocks(products)
+    const expiringStocks = getExpiringStocks(products)
+    const expiredStocks = getExpiredStocks(products)
 
     return (
         <AppLayout>

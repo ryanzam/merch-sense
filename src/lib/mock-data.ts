@@ -165,3 +165,8 @@ export const alerts: InventoryAlert[] = [
         acknowledged: true
     }
 ]
+
+export const categories = () => {
+    const categories = new Set(products.map(p => p.category))
+    return Array.from(categories).sort();
+} 

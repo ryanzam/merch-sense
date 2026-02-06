@@ -37,3 +37,6 @@ export interface DashboardStats {
     expiredCount: number;
     totalValue?: number;
 }
+
+export type ViewMode = 'grid' | 'table';
+export type FilterMode = 'all' | 'low-stock' | 'expiring' | 'expired' | 'in-stock';
