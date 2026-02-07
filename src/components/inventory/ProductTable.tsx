@@ -88,7 +88,7 @@ const ProductTable = ({
                                     )}
                                     <span className={cn(
                                         "font-semibold min-w-8 text-center",
-                                        checkLowStock(product) && "text-warning"
+                                        checkLowStock(product) && "text-yellow-600"
                                     )}>
                                         {product.quantity}
                                     </span>
@@ -108,7 +108,7 @@ const ProductTable = ({
                                 {product.expiryDate ? (
                                     <span className={cn(
                                         checkExpired(product) && "text-destructive",
-                                        checkExpiringSoon(product) && !checkExpired(product) && "text-warning"
+                                        checkExpiringSoon(product) && !checkExpired(product) && "text-yellow-600"
                                     )}>
                                         {format(new Date(product.expiryDate), 'MMM d, yyyy')}
                                     </span>

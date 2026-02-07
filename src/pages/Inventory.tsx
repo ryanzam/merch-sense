@@ -12,6 +12,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from ".
 import { type ViewMode, type Product } from "../types/inventory"
 import { cn } from '../lib/utils';
 import ProductTable from "../components/inventory/ProductTable"
+import ProductCard from '../components/inventory/ProductCard'
 
 const filters: { value: FilterMode; label: string; variant: 'default' | 'warning' | 'destructive' | 'success' }[] = [
     { value: 'all', label: 'All', variant: 'default' },
@@ -104,6 +105,7 @@ const Inventory = () => {
     };
 
     const handleQuantityChange = (product: Product, delta: number) => {
+
     };
 
     return (
@@ -191,7 +193,7 @@ const Inventory = () => {
                     />
                 ) : (
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                        {/* {filteredProducts.map(product => (
+                        {filteredProducts.map(product => (
                             <ProductCard
                                 key={product.id}
                                 product={product}
@@ -199,8 +201,7 @@ const Inventory = () => {
                                 onDelete={handleDeleteClick}
                                 onQuantityChange={handleQuantityChange}
                             />
-                        ))} */}
-                        Grid Product
+                        ))}
                     </div>
                 )}
             </div>

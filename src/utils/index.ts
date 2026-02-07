@@ -12,6 +12,12 @@ export const getAlertIcon = (type: InventoryAlert["type"]) => {
     }
 }
 
+export function getProductStatus(product: Product): 'ok' | 'warning' | 'critical' {
+    if (checkExpired(product)) return 'critical';
+    if (checkLowStock(product) || checkExpiringSoon(product)) return 'warning';
+    return 'ok';
+}
+
 export const getDaysUntilExpiry = (product: Product) => {
     if (!product.expiryDate) return null
     const now = new Date()
